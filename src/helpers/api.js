@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 //define backend endpoint (url)
-const backEnd = 'http://localhost:3000/vocabs/'
+const backEnd = 'https://comp1842-server.onrender.com/vocabs/'
 
 //consume (call) API with 4 methods GET/POST/PUT/DELETE
 export const ViewAllVocabs = async () => {
