@@ -6,6 +6,7 @@ import Show from './views/Show.vue'
 import Edit from './views/Edit.vue'
 import About from './views/About.vue'
 import Home from './views/Home.vue'
+import Test from './views/Test.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ const router = new Router({
          path: '/about',
          name: 'About',
          component: About
+      },
+      {
+         path: '/test',
+         name: 'test',
+         component: Test
       }
    ]
 })

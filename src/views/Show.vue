@@ -18,7 +18,7 @@
     </div>
     <br />
     <div>
-      <router-link :to="{ name: 'Edit', params: { id: this.$route.params.id } }" class="ui yellow button">
+      <router-link :to="{ name: 'Edit', params: { id: this.$route.params.id } }" class="ui inverted orange button">
         Edit word
       </router-link>
     </div>

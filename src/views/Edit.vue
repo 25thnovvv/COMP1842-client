@@ -12,7 +12,7 @@
             <input type="text" required v-model="word.german" />
          </div>
          <br />
-         <button class="ui primary button">Submit</button>
+         <button class="ui inverted green button">Submit</button>
       </form>
    </div>
 </template>

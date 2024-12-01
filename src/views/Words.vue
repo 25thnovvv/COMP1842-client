@@ -1,16 +1,14 @@
 <template>
   <div>
-    <table class="ui celled table">
+    <h1>Words list</h1>
+    <table class="ui celled table beige-table">
       <thead>
-        <tr>
-          <th colspan="5">WORD LIST</th>
-        </tr>
         <tr>
           <th>English</th>
           <th>German</th>
           <th colspan="2">Menu</th>
           <th>
-            <a class="ui button blue" @click.prevent="onDeleteAll()">
+            <a class="ui inverted orange button" @click.prevent="onDeleteAll()">
               Delete All </a>
           </th>
         </tr>
@@ -20,17 +18,17 @@
           <td>{{ word.english }}</td>
           <td>{{ word.german }}</td>
           <td>
-            <router-link class="ui button green" :to="{ name: 'Show', params: { id: word._id } }">
+            <router-link class="ui inverted green button" :to="{ name: 'Show', params: { id: word._id } }">
               Show
             </router-link>
           </td>
           <td>
-            <router-link class="ui button yellow" :to="{ name: 'Edit', params: { id: word._id } }">
+            <router-link class="ui inverted primary button" :to="{ name: 'Edit', params: { id: word._id } }">
               Edit
             </router-link>
           </td>
           <td>
-            <a class="ui button red" @click.prevent="onDelete(word._id)">
+            <a class="ui inverted red button" @click.prevent="onDelete(word._id)">
               Delete
             </a>
           </td>
@@ -86,3 +84,18 @@ export default {
   },
 }
 </script>
+
+<style>
+/* Set the background color of the table to beige */
+.beige-table {
+  background-color: beige !important; /* Beige background for the table */
+  border-radius: 8px; /* Optional: Adds rounded corners for aesthetics */
+  padding: 10px; /* Optional: Adds inner spacing */
+}
+
+.beige-table th,
+.beige-table td {
+  background-color: beige; /* Lighter beige for individual cells */
+  color: black;
+}
+</style>

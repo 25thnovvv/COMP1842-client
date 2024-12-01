@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div class="ui inverted segment navbar">
+    <div class="ui inverted grey segment navbar">
       <div class="ui center aligned container">
-        <div class="ui large secondary inverted pointing menu compact">
-          <router-link to="/words" class="item">
+        <div class="ui large secondary pointing menu compact">
+          <router-link to="/words" class="item link-white">
             <i class="list icon"></i>Words
           </router-link>
-          <router-link to="/words/new" class="item">
+          <router-link to="/words/new" class="item link-white">
             <i class="plus icon"></i>New
           </router-link>
-          <router-link to="/about" class="item">
+          <router-link to="/test" class="item link-white">
+            <i class="check icon"></i>Test
+          </router-link>
+          <router-link to="/about" class="item link-white">
             <i class="question circle outline icon"></i>About
           </router-link>
-          <a href="https://greenwich.edu.vn/en/english/" class="item">
-            Greenwich Vietnam
-          </a>
         </div>
       </div>
     </div>
@@ -39,3 +39,19 @@ export default {
   name: 'App'
 }
 </script>
+
+<style>
+body {
+  background-color: beige; /* Applies beige background to the whole page */
+  margin: 0; /* Removes default body margin for consistency */
+  font-family: 'Arial', sans-serif; /* Optional: Sets a global font style */
+}
+/* Custom CSS for white links */
+.link-white {
+  color: white !important; /* Ensures the text color is white */
+}
+
+.link-white:hover {
+  color: black !important; /* Optional: Light gray on hover for better UX */
+}
+</style>
