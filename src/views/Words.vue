@@ -92,10 +92,20 @@ export default {
   border-radius: 8px; /* Optional: Adds rounded corners for aesthetics */
   padding: 10px; /* Optional: Adds inner spacing */
 }
-
+.beige-table tr,
 .beige-table th,
 .beige-table td {
   background-color: beige; /* Lighter beige for individual cells */
+  color: black;
+}
+
+/* Change the background color of the thead */
+.beige-table thead {
+  background-color: beige !important; /* Beige background for thead */
+}
+
+.beige-table thead th {
+  background-color: beige; /* Beige background for individual th elements in thead */
   color: black;
 }
 </style>
