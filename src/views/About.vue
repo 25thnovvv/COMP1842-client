@@ -1,6 +1,6 @@
 <template>
    <div>
-      <h1>This is demo web app for COMP1842</h1>
+      <h1>I'm Pham Huu Anh Vu and this is my demo web app for COMP1842</h1>
    </div>
 </template>
 
