@@ -26,17 +26,22 @@
 </template>
 
 <script>
-import { ViewVocab } from '../helpers/api';
+
+import { ViewVocab } from '../helpers/api'; // Import the ViewVocab function from the api helper
+
 export default {
-  name: "Show",
+
+  name: "Show", // Define the component name
   data() {
     return {
-      word: "",
+      word: "", // Initialize the word data property as an empty string
     };
   },
   async mounted() {
+    // Fetch the vocabulary word using the ViewVocab function with the id from the route parameters
     this.word = await ViewVocab(this.$route.params.id);
-    console.log(this.$route.params.id)
+    // Log the id from the route parameters to the console
+    console.log(this.$route.params.id);
   },
 };
 </script>

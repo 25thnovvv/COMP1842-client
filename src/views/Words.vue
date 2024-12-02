@@ -62,39 +62,40 @@ export default {
   name: "Words",
   data() {
     return {
-      words: [],
+      words: [], // Initialize an empty array to store words
     };
   },
   async mounted() {
+    // Fetch all vocabulary words when the component is mounted
     this.words = await ViewAllVocabs();
   },
   methods: {
     async onDelete(id) {
-      //1. display confirm message before deletion
+      // Display a confirmation message before deletion
       const deleteConfirm = window.confirm(
         "Are you sure to delete this word ?"
       );
       if (deleteConfirm) {
-        //2. delete word from database
+        // Delete the word from the database
         await DeleteVocab(id);
-        //3. refresh the word list (remove deleted words)
+        // Refresh the word list by removing the deleted word
         const updatedWords = this.words.filter((word) => word._id !== id);
         this.words = updatedWords;
-        //4. display flash message after deletion
+        // Display a flash message after deletion
         this.flash("Delete word succeed !");
       }
     },
     async onDeleteAll() {
-      //1. display confirm message before deletion
+      // Display a confirmation message before deletion
       const deleteConfirm = window.confirm(
         "Are you sure to delete all words ?"
       );
       if (deleteConfirm) {
-        //2. delete word from database
+        // Delete all words from the database
         await DeleteAllVocabs();
-        //3. refresh word list
+        // Refresh the word list by clearing it
         this.words = [];
-        //4. display flash message after deletion
+        // Display a flash message after deletion
         this.flash("Delete all word succeed !");
       }
     },

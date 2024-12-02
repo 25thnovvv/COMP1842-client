@@ -18,21 +18,22 @@
 </template>
 
 <script>
-import { AddVocab } from "../helpers/api";
+import { AddVocab } from "../helpers/api"; // Import the AddVocab function from the api helper
+
 export default {
-   name: "New",
+   name: "New", // Define the component name
    data() {
       return {
-         word: {},
+         word: {}, // Initialize the word object
       };
    },
    methods: {
       onSubmit: async function () {
-         //1. add new word to database using axios
+         //1. Add new word to database using axios
          await AddVocab(this.word);
-         //2. display succeed message using vue-flash
+         //2. Display success message using vue-flash
          this.flash("Add new word succeed !");
-         //3. redirect to word list using $router
+         //3. Redirect to word list using $router
          this.$router.push("/words");
       },
    },

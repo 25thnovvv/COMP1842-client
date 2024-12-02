@@ -18,25 +18,25 @@
 </template>
 
 <script>
-import { ViewVocab, EditVocab } from "../helpers/api";
+import { ViewVocab, EditVocab } from "../helpers/api"; // Importing API helper functions
+
 export default {
-   name: "Edit",
+   name: "Edit", // Component name
    data() {
       return {
-         word: {},
+         word: {}, // Data property to hold the word object
       };
    },
    async mounted() {
-      this.word = await ViewVocab(this.$route.params.id);
+      // Lifecycle hook that runs when the component is mounted
+      this.word = await ViewVocab(this.$route.params.id); // Fetch the word data based on the route parameter id
    },
    methods: {
       onSubmit: async function () {
-         //1. add new word to database using axios
-         await EditVocab(this.$route.params.id, this.word);
-         //2. display succeed message using vue-flash
-         this.flash("Edit word succeed !");
-         //3. redirect to word list using $router
-         this.$router.push("/words");
+         // Method to handle form submission
+         await EditVocab(this.$route.params.id, this.word); // 1. Update the word in the database using the API
+         this.flash("Edit word succeed !"); // 2. Display success message using vue-flash
+         this.$router.push("/words"); // 3. Redirect to the word list page using the router
       },
    },
 };
